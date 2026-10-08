@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>비행기모드 랜덤 면접</title>
+<meta name="description" content="인스타 비행기모드(@airplanemode_speech)가 만든 승무원 면접 질문 94개 랜덤 연습판">
+<meta property="og:title" content="비행기모드 랜덤 면접 연습 ✈️">
+<meta property="og:description" content="현직 승무원이 고른 면접 질문 94개를 랜덤으로 뽑아 60초 타이머로 연습해요 · made by @airplanemode_speech">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%88%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#14213D; --ink:#1F2A44; --muted:#7A8499; --line:#E6E9F0;
+    --sky:#3D7BF7; --sky-2:#6FA3FF; --coral:#FF6B4A; --cream:#F7F5F0; --card:#FFFFFF;
+    --ig:linear-gradient(45deg,#F9CE34,#EE2A7B 50%,#6228D7);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    color:var(--ink);
+    background:linear-gradient(160deg,#9EC5F4 0%,#C9DBF5 45%,#F6D3C2 100%);
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:12px 16px 12px;max-width:720px;margin:0 auto;position:relative}
+  .cloud{position:absolute;border-radius:999px;background:rgba(255,255,255,.55);filter:blur(2px);pointer-events:none;animation:drift linear infinite}
+  .cloud::before{content:"";position:absolute;background:inherit;border-radius:999px}
+  .c1{width:120px;height:26px;top:12%;left:-140px;animation-duration:38s}
+  .c1::before{width:56px;height:40px;left:20px;top:-18px}
+  .c2{width:90px;height:20px;top:70%;left:-120px;animation-duration:52s;animation-delay:-20s;opacity:.7}
+  .c2::before{width:40px;height:30px;left:26px;top:-14px}
+  @keyframes drift{to{transform:translateX(calc(100vw + 280px))}}
+
+  .top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;position:relative;z-index:1}
+  .title{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+  .title small{white-space:nowrap;font-size:10.5px;font-weight:800;letter-spacing:.2em;color:#3A4A6B;display:flex;align-items:center;gap:6px}
+  .title small .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);animation:ping 2s infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,107,74,.6)}70%{box-shadow:0 0 0 7px rgba(255,107,74,0)}100%{box-shadow:0 0 0 0 rgba(255,107,74,0)}}
+  .title b{font-size:19px;font-weight:900;color:var(--navy);letter-spacing:-.02em;margin-top:3px;white-space:nowrap}
+  .ig{flex-shrink:0;display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:5px 12px 5px 5px;box-shadow:0 4px 14px rgba(20,33,61,.12);transition:transform .15s ease}
+  .ig:hover{transform:translateY(-1px)}
+  .ig .av{width:28px;height:28px;border-radius:50%;background:var(--ig);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;flex:0 0 auto}
+  .ig .tx{display:flex;flex-direction:column;line-height:1.15}
+  .ig .tx small{font-size:9.5px;font-weight:700;color:var(--muted)}
+  .ig .tx b{font-size:12.5px;font-weight:800;color:var(--navy);white-space:nowrap}
+
+  .chips{-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent);display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;margin-bottom:2px;scrollbar-width:none;position:relative;z-index:1}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;border:0;cursor:pointer;font:inherit;font-size:12.5px;font-weight:700;color:var(--navy);
+    background:rgba(255,255,255,.55);padding:7px 12px;border-radius:999px;transition:all .2s ease;backdrop-filter:blur(6px)}
+  .chip:hover{background:rgba(255,255,255,.85)}
+  .chip.on{background:var(--navy);color:#fff;box-shadow:0 4px 12px rgba(20,33,61,.25)}
+  .chip.fire.on{background:var(--coral)}
+
+  .pass{position:relative;z-index:1;background:var(--card);border-radius:20px;box-shadow:0 18px 40px rgba(20,33,61,.18),0 2px 6px rgba(20,33,61,.08);overflow:hidden}
+  .strip{white-space:nowrap;display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;padding:9px 18px;font-size:11px;font-weight:800;letter-spacing:.16em}
+  .strip span:last-child{opacity:.6}
+  .route{display:flex;align-items:center;gap:12px;padding:14px 20px 8px}
+  .city{display:flex;flex-direction:column;line-height:1.1}
+  .city small{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--muted)}
+  .city b{font-size:18px;font-weight:800;color:var(--navy)}
+  .city.to{text-align:right}
+  .track{flex:1;position:relative;height:22px}
+  .track::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed #CBD3E1}
+  .track .fill{position:absolute;left:0;top:50%;height:2px;margin-top:-1px;width:0;background:linear-gradient(90deg,var(--sky-2),var(--sky));border-radius:2px}
+  .plane{position:absolute;top:50%;left:10px;transform:translate(-50%,-50%);font-size:18px;line-height:1;filter:drop-shadow(0 2px 3px rgba(61,123,247,.35))}
+  .flying .fill{animation:fillw 1.5s cubic-bezier(.45,.05,.25,1) forwards}
+  .flying .plane{animation:fly 1.5s cubic-bezier(.45,.05,.25,1) forwards}
+  @keyframes fillw{from{width:0}to{width:100%}}
+  @keyframes fly{0%{left:10px;transform:translate(-50%,-50%) rotate(0)}50%{transform:translate(-50%,-85%) rotate(-6deg)}100%{left:calc(100% - 12px);transform:translate(-50%,-50%) rotate(0)}}
+
+  .meta{display:flex;gap:18px;padding:4px 20px 0;flex-wrap:wrap;align-items:flex-end}
+  .meta div{display:flex;flex-direction:column;min-width:52px}
+  .meta small{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--muted)}
+  .meta b{font-size:13.5px;font-weight:800;color:var(--navy);display:inline-block}
+  .meta b.flip{animation:flip .45s ease}
+  @keyframes flip{0%{transform:rotateX(90deg);opacity:0}100%{transform:rotateX(0);opacity:1}}
+  .stamp{margin-left:auto;align-self:center;transform:rotate(-8deg) scale(0);opacity:0;border:2.5px solid var(--coral);color:var(--coral);
+    font-weight:900;font-size:12px;letter-spacing:.06em;padding:4px 8px;border-radius:8px;background:rgba(255,107,74,.06)}
+  .stamp.hit{animation:stamp .5s cubic-bezier(.3,1.6,.5,1) forwards}
+  @keyframes stamp{0%{transform:rotate(-8deg) scale(2.2);opacity:0}100%{transform:rotate(-8deg) scale(1);opacity:1}}
+
+  .qbox{position:relative;padding:14px 20px 18px;min-height:124px;display:flex;flex-direction:column;justify-content:center}
+  .q{font-size:21px;font-weight:800;line-height:1.42;color:var(--navy);word-break:keep-all;letter-spacing:-.01em}
+  .q.idle{color:var(--muted);font-weight:700;font-size:17px}
+  .q.spin{animation:roll .09s linear;filter:blur(.6px);color:#9AA4B8}
+  @keyframes roll{from{transform:translateY(-10px);opacity:.2}to{transform:translateY(0);opacity:1}}
+  .q.land{animation:land .55s cubic-bezier(.2,1.4,.4,1)}
+  @keyframes land{0%{transform:translateY(14px) scale(.96);opacity:0}100%{transform:none;opacity:1}}
+  .sub{margin-top:6px;font-size:13.5px;color:var(--muted);font-weight:600}
+  .tipbtn{margin-top:10px;align-self:flex-start;border:0;background:#FFF4D6;color:#8A6412;font:inherit;font-size:12.5px;font-weight:700;padding:6px 10px;border-radius:8px;cursor:pointer;display:none}
+  .tip{display:none;margin-top:8px;font-size:13px;line-height:1.6;color:#6B5A2E;background:#FFFAEB;border-radius:10px;padding:10px 12px;white-space:pre-line;max-height:120px;overflow:auto}
+  .tip.show{display:block;animation:land .35s ease}
+
+  .perf{position:relative;height:0;border-top:2px dashed #E1E5EE;margin:0 18px}
+  .perf::before,.perf::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:#D3E1F5}
+  .perf::before{left:-30px} .perf::after{right:-30px}
+
+  .stub{background:var(--cream);padding:14px 16px 14px;display:flex;flex-direction:column;gap:10px}
+  .btns{display:flex;gap:8px}
+  .btn{flex:1;border:0;cursor:pointer;font:inherit;font-weight:800;font-size:15px;border-radius:14px;padding:13px 14px;transition:transform .12s ease,box-shadow .2s ease;display:flex;align-items:center;justify-content:center;gap:8px}
+  .btn:active{transform:scale(.97)}
+  .draw{background:linear-gradient(135deg,var(--sky) 0%,#2556D9 100%);color:#fff;box-shadow:0 8px 18px rgba(61,123,247,.35)}
+  .draw:disabled{opacity:.75;cursor:default}
+  .draw.pulse{animation:pulse 1.2s ease infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 8px rgba(61,123,247,.18),0 8px 18px rgba(61,123,247,.35)}}
+  .timer{flex:0 0 auto;min-width:112px;background:#fff;color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--line)}
+  .timer.run{color:var(--sky)} .timer.warn{color:var(--coral)}
+  .bar{height:5px;border-radius:99px;background:#E9ECF3;overflow:hidden}
+  .bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--sky-2),var(--sky));transform-origin:left;transform:scaleX(0)}
+  .bar.warn i{background:linear-gradient(90deg,#FF9A7E,var(--coral))}
+  .foot{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11.5px;color:var(--muted);font-weight:600}
+  .foot a{font-weight:800;color:var(--navy)}
+  .foot a span{background:var(--ig);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .toast{position:absolute;left:50%;top:10px;transform:translate(-50%,-20px);opacity:0;background:var(--navy);color:#fff;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:999px;transition:all .3s ease;z-index:5;white-space:nowrap}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media (max-width:480px){
+    .wrap{padding:10px 10px 10px}
+    .top{margin-bottom:8px}
+    .title small{display:none}
+    .title b{font-size:16px;margin-top:0}
+    .ig{padding:4px 10px 4px 4px;gap:6px}
+    .ig .av{width:24px;height:24px;font-size:12px}
+    .ig .tx small{display:none}
+    .ig .tx b{font-size:11px}
+    .chips{padding-bottom:8px}
+    .chip{font-size:12px;padding:6px 10px}
+    .pass{border-radius:16px}
+    .strip{padding:7px 14px;font-size:9.5px;letter-spacing:.1em}
+    .route{padding:10px 14px 4px;gap:8px}
+    .city b{font-size:14.5px}
+    .city small,.meta small{font-size:9px}
+    .meta{padding:2px 14px 0;gap:12px}
+    .meta div{min-width:0}
+    .meta b{font-size:12.5px}
+    .stamp{font-size:11px;padding:3px 6px}
+    .stamp .long{display:none}
+    .qbox{padding:10px 14px 12px;min-height:92px}
+    .q{font-size:17px;line-height:1.4}
+    .q.idle{font-size:15px}
+    .sub{font-size:12.5px;margin-top:4px}
+    .tipbtn{margin-top:8px;font-size:12px;padding:5px 9px}
+    .perf{margin:0 12px}
+    .perf::before{left:-24px} .perf::after{right:-24px}
+    .stub{padding:10px 12px 10px;gap:8px}
+    .btn{font-size:14px;padding:11px;border-radius:12px}
+    .timer{min-width:84px}
+    .foot{font-size:10.5px}
+    .foot .kbd{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="cloud c1"></span><span class="cloud c2"></span>
+  <div class="toast" id="toast"></div>
+  <div class="top">
+    <div class="title"><small><span class="dot"></span>RANDOM INTERVIEW</small><b>랜덤 면접 연습</b></div>
+    <a class="ig" href="https://www.instagram.com/airplanemode_speech/" target="_blank" rel="noopener">
+      <span class="av">✈︎</span>
+      <span class="tx"><small>made by 비행기모드</small><b>@airplanemode_speech</b></span>
+    </a>
+  </div>
+  <div class="chips" id="chips"></div>
+
+  <div class="pass" id="pass">
+    <div class="strip"><span>✈ AIRPLANE MODE AIR</span><span>BOARDING PASS</span></div>
+    <div class="route" id="route">
+      <div class="city"><small>FROM</small><b>승준생</b></div>
+      <div class="track"><span class="fill"></span><span class="plane">✈️</span></div>
+      <div class="city to"><small>TO</small><b>승무원</b></div>
+    </div>
+    <div class="meta">
+      <div><small>GATE</small><b id="gate">—</b></div>
+      <div><small>TOPIC</small><b id="topic">—</b></div>
+      <div><small>SEAT</small><b id="seat">—</b></div>
+      <span class="stamp" id="stamp">🔥 <span class="long">실제 </span>기출</span>
+    </div>
+    <div class="qbox">
+      <p class="q idle" id="q" aria-live="polite">탑승 준비 되셨나요?<br>버튼을 눌러 오늘의 질문을 뽑아보세요.</p>
+      <p class="sub" id="sub"></p>
+      <button class="tipbtn" id="tipbtn">💡 현직자 TIP 보기</button>
+      <div class="tip" id="tip"></div>
+    </div>
+    <div class="perf"></div>
+    <div class="stub">
+      <div class="btns">
+        <button class="btn draw" id="draw">질문 뽑기 <span>✈️</span></button>
+        <button class="btn timer" id="timer">⏱ 60초</button>
+      </div>
+      <div class="bar" id="bar"><i id="barfill"></i></div>
+      <div class="foot">
+        <span id="left">남은 질문 94 / 94</span>
+        <span class="kbd">스페이스바로도 뽑기 가능</span>
+        <a href="https://www.instagram.com/airplanemode_speech/" target="_blank" rel="noopener">© <span>인스타 비행기모드</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = {"parts":[{"emoji":"🙋‍♀️","tab":"나에 대해"},{"emoji":"🎯","tab":"꿈·직무"},{"emoji":"🏢","tab":"회사"},{"emoji":"💡","tab":"아이디어"},{"emoji":"🤝","tab":"팀워크"},{"emoji":"🧯","tab":"기내 상황"},{"emoji":"🌏","tab":"영어·외국어"}],"qs":[{"n":1,"p":0,"s":"성격·가치관","q":"본인을 한 단어로 표현한다면?","sub":"","k":false,"tip":""},{"n":2,"p":0,"s":"성격·가치관","q":"본인은 리더형인가요, 팔로워형인가요?","sub":"","k":false,"tip":""},{"n":3,"p":0,"s":"성격·가치관","q":"본인의 롤모델은 누구인가요?","sub":"","k":false,"tip":""},{"n":4,"p":0,"s":"성격·가치관","q":"친구들 사이에서 별명이 무엇인가요? 이유는?","sub":"","k":false,"tip":""},{"n":5,"p":0,"s":"성격·가치관","q":"행복이란 뭐라고 생각하세요?","sub":"","k":false,"tip":""},{"n":6,"p":0,"s":"성격·가치관","q":"본인만의 스트레스 해소법이 있나요?","sub":"","k":false,"tip":""},{"n":7,"p":0,"s":"성격·가치관","q":"싫어하는 사람이 생기면 어떻게 하는 편인가요?","sub":"","k":false,"tip":""},{"n":8,"p":0,"s":"경험·에피소드","q":"살면서 가장 힘들었던 경험은 언제인가요?","sub":"","k":false,"tip":""},{"n":9,"p":0,"s":"경험·에피소드","q":"살면서 힘든 일을 극복했던 경험은?","sub":"","k":false,"tip":"\"저는 승무원을 준비하면서~\"는 금지. 아직 승무원이 아니라 면접관에겐 와닿지 않아요. 나만의 기억될 에피소드로!"},{"n":10,"p":0,"s":"경험·에피소드","q":"인생에서 실패한 경험과, 다시 돌아간다면 어떻게 할 건가요?","sub":"","k":true,"tip":""},{"n":11,"p":0,"s":"경험·에피소드","q":"살면서 후회되는 일이 있나요?","sub":"","k":false,"tip":""},{"n":12,"p":0,"s":"경험·에피소드","q":"올해 가장 잘한 일과 못한 일은 무엇인가요?","sub":"","k":false,"tip":""},{"n":13,"p":0,"s":"경험·에피소드","q":"문화 차이를 겪었던 경험이 있나요?","sub":"","k":false,"tip":""},{"n":14,"p":0,"s":"경험·에피소드","q":"기억에 남는 서비스 경험이 있나요?","sub":"","k":false,"tip":""},{"n":15,"p":0,"s":"경험·에피소드","q":"까다로운 손님을 응대했던 경험이 있나요?","sub":"","k":false,"tip":""},{"n":16,"p":0,"s":"경험·에피소드","q":"어르신들에게 서비스했거나 도움을 드렸던 경험은?","sub":"","k":true,"tip":""},{"n":17,"p":0,"s":"아이스브레이킹","q":"배고프죠? 오늘 면접 오실 때는 어떻게 왔어요?","sub":"","k":true,"tip":""},{"n":18,"p":0,"s":"아이스브레이킹","q":"오늘 메이크업은 샵에서 했나요, 직접 하셨나요?","sub":"","k":false,"tip":""},{"n":19,"p":0,"s":"아이스브레이킹","q":"오늘 면접 끝나고 뭐 하실 건가요?","sub":"","k":false,"tip":""},{"n":20,"p":0,"s":"아이스브레이킹","q":"지금까지 꿈을 가장 응원해 준 사람은 누구인가요?","sub":"","k":false,"tip":""},{"n":21,"p":0,"s":"아이스브레이킹","q":"가족과 함께 가고 싶은 여행지는 어디인가요?","sub":"","k":false,"tip":""},{"n":22,"p":0,"s":"아이스브레이킹","q":"평소 즐겨 보는 유튜브 채널이 있나요?","sub":"","k":false,"tip":""},{"n":23,"p":0,"s":"아이스브레이킹","q":"최근에 읽었던 책을 소개해 주세요.","sub":"","k":false,"tip":""},{"n":24,"p":0,"s":"아이스브레이킹","q":"무인도에 간다면 꼭 챙겨 갈 한 가지는 무엇인가요?","sub":"","k":false,"tip":""},{"n":25,"p":1,"s":"지원동기·준비과정","q":"꿈을 이루기 위해 어떤 노력을 해왔나요?","sub":"","k":false,"tip":""},{"n":26,"p":1,"s":"지원동기·준비과정","q":"지금까지 준비하면서 가장 노력을 많이 한 것은 무엇인가요?","sub":"(어필하고 싶은 점)","k":false,"tip":""},{"n":27,"p":1,"s":"지원동기·준비과정","q":"승무원을 준비하면서 가장 힘들었던 점은?","sub":"","k":false,"tip":""},{"n":28,"p":1,"s":"지원동기·준비과정","q":"이것만큼은 다른 지원자보다 내가 낫다, 하는 게 있나요?","sub":"","k":false,"tip":""},{"n":29,"p":1,"s":"지원동기·준비과정","q":"졸업 후 공백기 때 무엇을 했나요?","sub":"","k":false,"tip":""},{"n":30,"p":1,"s":"지원동기·준비과정","q":"재지원했는데, 이전 지원과 비교했을 때 달라진 점은 뭔가요?","sub":"","k":false,"tip":""},{"n":31,"p":1,"s":"지원동기·준비과정","q":"이전 직장을 퇴사한 이유는 무엇인가요?","sub":"","k":false,"tip":""},{"n":32,"p":1,"s":"지원동기·준비과정","q":"나이가 많은데, 그동안 승무원 준비를 명분 삼아 그냥 놀았던 건 아닌가요?","sub":"","k":true,"tip":""},{"n":33,"p":1,"s":"직무 이해","q":"승무원에게 필요한 자질(역량)은 무엇일까요?","sub":"","k":false,"tip":""},{"n":34,"p":1,"s":"직무 이해","q":"객실 승무원 직무에서 가장 중요한 게 뭐라고 생각하세요?","sub":"","k":false,"tip":""},{"n":35,"p":1,"s":"직무 이해","q":"서비스와 안전 중 무엇이 더 중요하다고 생각합니까?","sub":"","k":false,"tip":""},{"n":36,"p":1,"s":"직무 이해","q":"승무원의 단점 세 가지를 말해 보세요.","sub":"","k":false,"tip":"무조건 극복 가능한 단점 + 반박할 장점을 세트로 준비하세요.\n- 스케줄 근무로 불규칙한 생활 패턴 → 꾸준한 운동, 체력관리로 적응 잘해요\n- 가족·친구 경조사를 잘 못 챙김 → 경조사 전후로 마음을 전하며 관계 유지할게요\n- 베이스가 타지면 가족·친구와 떨어져 지냄 → 영상통화 자주 하면 괜찮아요"},{"n":37,"p":1,"s":"직무 이해","q":"승무원은 비행 전, 왜 음주를 하면 안 될까요?","sub":"","k":false,"tip":"승무원은 매 비행 전 음주 테스트를 통과해야 비행에 투입될 수 있어요."},{"n":38,"p":1,"s":"직무 이해","q":"승무원의 SNS 활동에 대해 어떻게 생각하세요?","sub":"","k":false,"tip":""},{"n":39,"p":1,"s":"입사 후 포부","q":"입사 후, 가장 하고 싶은 일이 무엇인가요?","sub":"","k":false,"tip":""},{"n":40,"p":1,"s":"입사 후 포부","q":"승무원이 된다면 가장 먼저 무엇을 하고 싶나요?","sub":"","k":false,"tip":""},{"n":41,"p":1,"s":"입사 후 포부","q":"5년 후 본인은 어떤 모습일까요?","sub":"","k":false,"tip":""},{"n":42,"p":1,"s":"입사 후 포부","q":"승무원이 된 후 같은 꿈을 가진 후배들에게 강의를 한다면, 어떤 이야기를 해주고 싶나요?","sub":"","k":true,"tip":""},{"n":43,"p":2,"s":"회사 분석","q":"다른 회사가 아닌, 우리 회사에 지원한 이유가 있나요?","sub":"","k":false,"tip":""},{"n":44,"p":2,"s":"회사 분석","q":"다른 회사도 지원하셨나요?","sub":"","k":false,"tip":""},{"n":45,"p":2,"s":"회사 분석","q":"우리 회사의 인재상에 대해 알고 있나요?","sub":"","k":false,"tip":""},{"n":46,"p":2,"s":"회사 분석","q":"현재 우리 회사에 항공기가 몇 대 있을까요?","sub":"","k":false,"tip":""},{"n":47,"p":2,"s":"회사 분석","q":"우리 회사의 경쟁 상대는 어느 회사라고 생각하나요?","sub":"","k":false,"tip":""},{"n":48,"p":2,"s":"회사 분석","q":"우리 회사에서 개선해야 할 점은 무엇인가요?","sub":"","k":false,"tip":""},{"n":49,"p":2,"s":"회사 분석","q":"최근 읽었던 우리 회사 관련 기사를 소개해 주세요.","sub":"","k":false,"tip":""},{"n":50,"p":2,"s":"회사 분석","q":"우리 회사에서 하고 있는 ESG 경영 정책에 대해, 돌아가면서 하나씩 얘기해 보세요.","sub":"","k":true,"tip":""},{"n":51,"p":2,"s":"브랜드·노선·사내문화","q":"우리 회사 유니폼에 대해 어떻게 생각하세요?","sub":"","k":false,"tip":""},{"n":52,"p":2,"s":"브랜드·노선·사내문화","q":"직급에 따라 유니폼이 다른 것에 대해 어떻게 생각하나요?","sub":"","k":false,"tip":""},{"n":53,"p":2,"s":"브랜드·노선·사내문화","q":"우리 회사의 사내 활동 중 참여하고 싶은 게 있나요?","sub":"","k":false,"tip":""},{"n":54,"p":2,"s":"브랜드·노선·사내문화","q":"가고 싶은 취항지는?","sub":"","k":true,"tip":""},{"n":55,"p":2,"s":"항공업 트렌드·AI","q":"최근에 본 항공 관련 뉴스를 얘기해 주세요.","sub":"","k":false,"tip":""},{"n":56,"p":2,"s":"항공업 트렌드·AI","q":"항공업에서 AI를 어떻게 활용하면 좋을까요?","sub":"","k":false,"tip":""},{"n":57,"p":2,"s":"항공업 트렌드·AI","q":"요즘 항공사에서도 AI 챗봇 서비스를 많이 쓰고 있어요. 사람보다 낫다고 생각하나요?","sub":"","k":false,"tip":""},{"n":58,"p":2,"s":"항공업 트렌드·AI","q":"AI 기술이 교육 분야에 미친 영향은 무엇이라고 생각하세요?","sub":"","k":false,"tip":""},{"n":59,"p":3,"s":"기내 서비스 기획","q":"새로운 기내식 메뉴를 추천해 주세요.","sub":"","k":false,"tip":""},{"n":60,"p":3,"s":"기내 서비스 기획","q":"기내 보딩 뮤직을 추천해 주세요.","sub":"","k":false,"tip":""},{"n":61,"p":3,"s":"기내 서비스 기획","q":"우리 회사의 어메니티 브랜드를 추천해 주세요.","sub":"(+이유)","k":false,"tip":""},{"n":62,"p":3,"s":"기내 서비스 기획","q":"승객에게 특별한 기억이 될 만한 기내 이벤트를 제안해 주세요.","sub":"","k":false,"tip":""},{"n":63,"p":3,"s":"기내 서비스 기획","q":"반려동물 관련 서비스를 제안해 주세요.","sub":"","k":false,"tip":""},{"n":64,"p":3,"s":"기내 서비스 기획","q":"기내 판매량을 높이기 위한 아이디어를 제안해 주세요.","sub":"","k":false,"tip":"ex. 파라타항공의 상품 큐레이터 승무원"},{"n":65,"p":3,"s":"노선·마케팅","q":"우리 회사의 신규 취항지를 추천해 보세요.","sub":"","k":false,"tip":""},{"n":66,"p":3,"s":"노선·마케팅","q":"우리 회사 유튜브에서 해보면 좋을 콘텐츠를 추천해 주세요.","sub":"","k":false,"tip":""},{"n":67,"p":3,"s":"ESG·친환경","q":"기내에서 환경을 위한 ESG 경영을 실천할 수 있는 방법은?","sub":"","k":false,"tip":""},{"n":68,"p":3,"s":"ESG·친환경","q":"항공사에서 해볼 수 있는 친환경 캠페인을 제안해 주세요.","sub":"","k":false,"tip":""},{"n":69,"p":4,"s":"동료 관계","q":"어떤 동료와 같이 일하고 싶나요?","sub":"","k":false,"tip":""},{"n":70,"p":4,"s":"동료 관계","q":"같이 일하기 싫은 동료는 어떤 스타일인가요?","sub":"","k":false,"tip":""},{"n":71,"p":4,"s":"동료 관계","q":"동료들과 잘 어울리기 위한 나만의 방법은 무엇인가요?","sub":"","k":false,"tip":""},{"n":72,"p":4,"s":"동료 관계","q":"동기 비행을 갔어요. 나는 같이 밖에 나가고 싶은데 동기는 방에만 있고 싶어 하는 상황, 어떻게 하실 건가요?","sub":"","k":false,"tip":""},{"n":73,"p":4,"s":"선후배·조직문화","q":"본인보다 나이가 어린 선배를 만나면 불편할 텐데, 어떻게 할 건가요?","sub":"","k":true,"tip":""},{"n":74,"p":4,"s":"선후배·조직문화","q":"선배와 후배가 싸우고 있다면 어떻게 할 건가요?","sub":"(선배가 무조건 잘못한 상황)","k":true,"tip":""},{"n":75,"p":4,"s":"선후배·조직문화","q":"아시아나와 합병 이후, 승무원들끼리 잘 지낼 방법은 뭐라고 생각하세요?","sub":"(대한항공)","k":true,"tip":""},{"n":76,"p":4,"s":"선후배·조직문화","q":"MZ·젠지 세대와 기성세대의 갈등을 해결하려면 어떻게 해야 할까요?","sub":"","k":false,"tip":""},{"n":77,"p":4,"s":"선후배·조직문화","q":"직장 내 노조에 대해 어떻게 생각하세요?","sub":"","k":true,"tip":""},{"n":78,"p":5,"s":"승객 응대","q":"기내에서 어린아이가 크게 울고 있으면 어떻게 대처할 건가요?","sub":"","k":false,"tip":""},{"n":79,"p":5,"s":"승객 응대","q":"어린이가 앞좌석을 발로 차서 승객이 불편해하며 도움을 요청했어요. 승무원이라면 어떻게 대응하실 건가요?","sub":"","k":false,"tip":""},{"n":80,"p":5,"s":"승객 응대","q":"기내 온도가 덥다고 컴플레인하는 승객에게 어떻게 대처하실 건가요?","sub":"","k":false,"tip":""},{"n":81,"p":5,"s":"승객 응대","q":"승무원의 태도에 불만족한 고객에게, 본인 성격을 바탕으로 어떻게 응대할 건가요?","sub":"","k":true,"tip":""},{"n":82,"p":5,"s":"안전·보안","q":"기내에서 화재가 발생하면 어떻게 대처하실 건가요?","sub":"","k":false,"tip":"브리핑이나 중요한 심사에서 현직 승무원에게도 자주 묻는 질문이에요."},{"n":83,"p":5,"s":"안전·보안","q":"기내 보조배터리 반입 관련해서 알고 있는 내용을 모두 말해 보세요.","sub":"","k":false,"tip":"사용 가능? · 충전 가능? · 몇 개까지 반입? · 단락 방지 조치는?\n- 2026년 1월 26일부터 보조배터리 기내 사용 전면 금지 (반입은 가능)\n- 2025년 9월 1일부터 비닐봉투 대신 수속 카운터에서 절연테이프 제공 (국토교통부 지침)"},{"n":84,"p":6,"s":"English Interview","q":"How are you feeling today?","sub":"오늘 기분 어때요?","k":false,"tip":"Good, nervous 같은 뻔한 단어만 말하지 말고, 긍정적인 내용으로! (긴장돼요 ❌)"},{"n":85,"p":6,"s":"English Interview","q":"What did you have for breakfast this morning?","sub":"오늘 아침 뭐 먹었어요?","k":true,"tip":""},{"n":86,"p":6,"s":"English Interview","q":"What are your hobbies?","sub":"취미가 뭐예요?","k":false,"tip":""},{"n":87,"p":6,"s":"English Interview","q":"Why do you want to be a cabin crew?","sub":"왜 승무원이 되고 싶나요?","k":false,"tip":""},{"n":88,"p":6,"s":"English Interview","q":"What makes you angry?","sub":"어떨 때 화가 나나요?","k":false,"tip":""},{"n":89,"p":6,"s":"English Interview","q":"Tell me about the happiest moment from your childhood.","sub":"어린 시절 가장 행복했던 순간은?","k":false,"tip":""},{"n":90,"p":6,"s":"English Interview","q":"Have you ever dealt with a demanding customer?","sub":"까다로운 손님을 응대한 적 있나요?","k":false,"tip":""},{"n":91,"p":6,"s":"English Interview","q":"Have you ever lived abroad? If so, how was your experience?","sub":"해외에 살아본 적 있나요?","k":true,"tip":""},{"n":92,"p":6,"s":"외국어 실전","q":"외국인 승객에게 비빔밥을 영어로 설명해 주세요.","sub":"","k":false,"tip":""},{"n":93,"p":6,"s":"외국어 실전","q":"우리 회사를 프랑스어로 소개해 보세요.","sub":"(해당 언어 가능자)","k":false,"tip":""},{"n":94,"p":6,"s":"외국어 실전","q":"중국어로 자기소개를 해보세요.","sub":"(해당 언어 가능자)","k":true,"tip":""}]};
+const PARTS = DATA.parts, QS = DATA.qs;
+const $ = id => document.getElementById(id);
+const store = {
+  get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+let filter = 'all', onlyKicho = false;
+let seen = new Set(store.get('rq_seen') || []);
+let busy = false, current = null;
+
+const chipDefs = [{k:'all', label:'전체'}].concat(PARTS.map((p,i)=>({k:String(i), label:p.emoji+' '+p.tab})));
+function renderChips(){
+  const box = $('chips'); box.innerHTML = '';
+  chipDefs.forEach(c=>{
+    const b = document.createElement('button');
+    b.className = 'chip' + (filter===c.k ? ' on' : '');
+    b.textContent = c.label;
+    b.onclick = ()=>{ filter = c.k; renderChips(); updateLeft(); };
+    box.appendChild(b);
+  });
+  const f = document.createElement('button');
+  f.className = 'chip fire' + (onlyKicho ? ' on' : '');
+  f.textContent = '🔥 기출만';
+  f.onclick = ()=>{ onlyKicho = !onlyKicho; renderChips(); updateLeft(); };
+  box.appendChild(f);
+}
+function pool(){ return QS.filter(q => (filter==='all' || String(q.p)===filter) && (!onlyKicho || q.k)); }
+function updateLeft(){
+  const p = pool(); const left = p.filter(q=>!seen.has(q.n)).length;
+  $('left').textContent = `남은 질문 ${left} / ${p.length}`;
+}
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove('show'),2200); }
+function pad(n){ return 'Q'+String(n).padStart(2,'0'); }
+function setFlip(el, text){ el.textContent = text; el.classList.remove('flip'); void el.offsetWidth; el.classList.add('flip'); }
+
+function draw(){
+  if(busy) return;
+  const p = pool(); if(!p.length) return;
+  let cand = p.filter(q=>!seen.has(q.n));
+  if(!cand.length){ p.forEach(q=>seen.delete(q.n)); cand = p.slice(); toast('🎉 한 바퀴 완주! 다시 섞을게요'); }
+  const target = cand[Math.floor(Math.random()*cand.length)];
+  busy = true; stopTimer(true);
+  const btn = $('draw'); btn.disabled = true; btn.classList.remove('pulse');
+  const qEl = $('q'), sub = $('sub'), stamp = $('stamp');
+  qEl.classList.remove('idle','land'); sub.textContent=''; stamp.classList.remove('hit');
+  $('tipbtn').style.display='none'; $('tip').classList.remove('show');
+  const route = $('route'); route.classList.remove('flying'); void route.offsetWidth; route.classList.add('flying');
+  const delays = []; let d = 40; while(d < 230){ delays.push(d); d *= 1.16; }
+  let i = 0;
+  (function tick(){
+    if(i < delays.length){
+      const r = p[Math.floor(Math.random()*p.length)];
+      qEl.textContent = r.q; qEl.classList.remove('spin'); void qEl.offsetWidth; qEl.classList.add('spin');
+      setTimeout(tick, delays[i++]);
+    } else {
+      qEl.classList.remove('spin'); qEl.textContent = target.q; void qEl.offsetWidth; qEl.classList.add('land');
+      sub.textContent = target.sub || '';
+      const part = PARTS[target.p];
+      setFlip($('gate'), part.tab); setTimeout(()=>setFlip($('topic'), target.s), 90); setTimeout(()=>setFlip($('seat'), pad(target.n)), 180);
+      if(target.k) setTimeout(()=>stamp.classList.add('hit'), 260);
+      if(target.tip){ $('tip').textContent = target.tip; $('tipbtn').style.display='inline-block'; $('tipbtn').textContent='💡 현직자 TIP 보기'; }
+      seen.add(target.n); store.set('rq_seen', [...seen]); updateLeft();
+      current = target; busy = false; btn.disabled = false;
+      btn.innerHTML = '다음 질문 <span>✈️</span>';
+    }
+  })();
+}
+$('draw').onclick = draw;
+$('tipbtn').onclick = ()=>{ const t=$('tip'); const on=t.classList.toggle('show'); $('tipbtn').textContent = on ? '💡 TIP 접기' : '💡 현직자 TIP 보기'; };
+document.addEventListener('keydown', e=>{ if((e.code==='Space'||e.code==='Enter') && e.target.tagName!=='BUTTON' && e.target.tagName!=='A'){ e.preventDefault(); draw(); }});
+
+const DUR = 60; let tLeft = DUR, tInt = null;
+function fmt(s){ return '0:'+String(s).padStart(2,'0'); }
+function stopTimer(reset){
+  clearInterval(tInt); tInt=null;
+  const tb=$('timer'), bar=$('bar'), fill=$('barfill');
+  tb.classList.remove('run','warn'); bar.classList.remove('warn');
+  if(reset){ tLeft=DUR; tb.textContent='⏱ 60초'; fill.style.transition='none'; fill.style.transform='scaleX(0)'; }
+}
+function startTimer(){
+  if(!current){ toast('먼저 질문을 뽑아주세요 ✈️'); return; }
+  const tb=$('timer'), bar=$('bar'), fill=$('barfill');
+  tLeft=DUR; tb.classList.add('run'); tb.textContent='⏹ '+fmt(tLeft);
+  fill.style.transition='none'; fill.style.transform='scaleX(1)'; void fill.offsetWidth;
+  fill.style.transition=`transform ${DUR}s linear`; fill.style.transform='scaleX(0)';
+  tInt=setInterval(()=>{
+    tLeft--; tb.textContent='⏹ '+fmt(Math.max(tLeft,0));
+    if(tLeft<=10){ tb.classList.add('warn'); bar.classList.add('warn'); }
+    if(tLeft<=0){ stopTimer(false); tb.textContent='⏱ 다시'; toast('⏰ 시간 종료! 다음 질문으로 가볼까요?'); $('draw').classList.add('pulse'); }
+  },1000);
+}
+$('timer').onclick = ()=>{ if(tInt){ stopTimer(true); } else { startTimer(); } };
+
+renderChips(); updateLeft();
+</script>
+</body>
+</html>
